@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1 th:text="${titulo}"></h1>
+
+	<div th:if="${usuarios.size()== 0}">no hay usuarios en la lista!</div>
+	<table>
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr></tr
+		</tbody>
+	</table>
+</body>
+</html>
