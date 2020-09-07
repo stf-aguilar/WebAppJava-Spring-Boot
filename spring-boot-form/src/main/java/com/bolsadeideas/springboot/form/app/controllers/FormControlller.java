@@ -1,7 +1,5 @@
 package com.bolsadeideas.springboot.form.app.controllers;
 
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.validation.Valid;
 
@@ -21,23 +19,22 @@ public class FormControlller {
 	@GetMapping("/form")
 	public String form(Model model) {
 		Usuario usuario = new Usuario();
+		usuario.setNombre("Homero");
+		usuario.setApellido("Simpson");
+		usuario.setIdentificador("123.456.789:k");
 		model.addAttribute("titulo", "Formulario usuarios");
-		model.addAttribute("user", usuario);
+		model.addAttribute("usuario", usuario);
 		return "form";
 	}
 	
 	
 	@PostMapping("/form")
-	public String procesar(@Valid @ModelAttribute("user") Usuario usuario,BindingResult result, Model model) {
+	public String procesar(@Valid Usuario usuario,BindingResult result, Model model) {
 		
 		model.addAttribute("titulo", "Resultado form");
 		
 		if(result.hasErrors()) {
-			Map<String, String> errores = new HashMap<>();
-			result.getFieldErrors().forEach(err->{
-				errores.put(err.getField(), "El campo ".concat(err.getField()).concat("").concat(err.getDefaultMessage()));
-			});
-			model.addAttribute("error", errores);
+			
 			return "form";
 		}
 		
