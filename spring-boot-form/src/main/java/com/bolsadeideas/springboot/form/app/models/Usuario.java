@@ -6,7 +6,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Usuario {
-	@NotEmpty(message = "el nombre no puede ser vacío")
+	//@NotEmpty(message = "el nombre no puede ser vacío")
 	private String nombre;
 	
 	@NotEmpty
@@ -23,12 +23,13 @@ public class Usuario {
 	@Email(message = "correo con formato incorrecto")
 	private String email;
 	
-	@Pattern(regexp= "[0-9]{2}[.][0-9]{3}[-][A-Z]{1}")
+	//@Pattern(regexp= "[0-9]{2}[.][0-9]{3}[-][A-Z]{1}")
 	private String identificador;
 	
 	public String getIdentificador() {
 		return identificador;
 	}
+	
 	public void setIdentificador(String identificador) {
 		this.identificador = identificador;
 	}
