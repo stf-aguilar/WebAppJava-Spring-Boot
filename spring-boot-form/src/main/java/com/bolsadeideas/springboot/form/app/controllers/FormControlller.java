@@ -35,8 +35,7 @@ public class FormControlller {
 		
 		model.addAttribute("titulo", "Resultado form");
 		
-		if(result.hasErrors()) {
-			
+		if(result.hasErrors()) {	
 			return "form";
 		}
 		

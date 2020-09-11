@@ -2,6 +2,7 @@ package com.bolsadeideas.springboot.form.app.models;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 public class Usuario {
@@ -22,6 +23,7 @@ public class Usuario {
 	@Email(message = "correo con formato incorrecto")
 	private String email;
 	
+	@Pattern(regexp= "[0-9]{2}[.][0-9]{3}[-][A-Z]{1}")
 	private String identificador;
 	
 	public String getIdentificador() {
