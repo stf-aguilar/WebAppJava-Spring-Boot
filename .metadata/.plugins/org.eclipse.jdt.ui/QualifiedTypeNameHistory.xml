@@ -9,8 +9,6 @@
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Primary"/>
     <fullyQualifiedTypeName name="com.bolsadeideas.springboot.di.app.models.service.MiServicioComplejo"/>
     <fullyQualifiedTypeName name="java.util.List"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Value"/>
     <fullyQualifiedTypeName name="org.springframework.web.context.annotation.SessionScope"/>
     <fullyQualifiedTypeName name="java.io.Serializable"/>
@@ -20,7 +18,6 @@
     <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.models.Usuario"/>
     <fullyQualifiedTypeName name="javax.validation.Valid"/>
     <fullyQualifiedTypeName name="org.springframework.validation.BindingResult"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
@@ -28,4 +25,16 @@
     <fullyQualifiedTypeName name="javax.validation.constraints.NotEmpty"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ModelAttribute"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.SessionAttributes"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.Pattern"/>
+    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.models.Usuario"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="org.springframework.validation.ValidationUtils"/>
+    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.validation.UsuarioValidador"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.WebDataBinder"/>
+    <fullyQualifiedTypeName name="javax.validation.ConstraintValidator"/>
+    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.validation.IdentificadorRegex"/>
+    <fullyQualifiedTypeName name="javax.validation.Constraint"/>
+    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.validation.Requerido"/>
 </qualifiedTypeNameHistroy>
