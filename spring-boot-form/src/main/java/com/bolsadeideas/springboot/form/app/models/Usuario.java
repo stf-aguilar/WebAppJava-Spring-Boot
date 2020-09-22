@@ -2,10 +2,12 @@ package com.bolsadeideas.springboot.form.app.models;
 
 import java.sql.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -38,9 +40,21 @@ public class Usuario {
 	private String identificador;
 	
 	@NotNull
-	@DateTimeFormat(pattern="yyyy/mm/dd")
+	@Past
+	//@DateTimeFormat(pattern = "yyyy/mm/dd")
 	private Date fechaNacimiento;
 	
+	@Valid
+	private Pais pais;
+	
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
 	public String getIdentificador() {
 		return identificador;
 	}
