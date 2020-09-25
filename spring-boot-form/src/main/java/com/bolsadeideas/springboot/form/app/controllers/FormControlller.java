@@ -2,6 +2,7 @@ package com.bolsadeideas.springboot.form.app.controllers;
 
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -25,6 +26,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.boldadeideas.springboot.form.app.editors.NombreMayusculaEditor;
 import com.bolsadeideas.springboot.form.app.models.Pais;
 import com.bolsadeideas.springboot.form.app.models.Usuario;
+import com.bolsadeideas.springboot.form.app.services.PaisPropertyEditor;
+import com.bolsadeideas.springboot.form.app.services.PaisService;
 import com.bolsadeideas.springboot.form.app.validation.UsuarioValidador;
 
 @Controller
@@ -34,6 +37,12 @@ public class FormControlller {
 	@Autowired
 	private UsuarioValidador validador;
 
+	@Autowired
+	private PaisService paisService;
+	
+	@Autowired
+	private PaisPropertyEditor paisEditor;
+	
 	@org.springframework.web.bind.annotation.InitBinder
 	public void InitBinder(WebDataBinder binder) {
 		binder.addValidators(validador);
@@ -41,7 +50,9 @@ public class FormControlller {
 		dateFormat.setLenient(false);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(String.class, new NombreMayusculaEditor());
+		binder.registerCustomEditor(Pais.class, "pais",paisEditor);
 	}
+	
 	@ModelAttribute("paises")
 	public List<String> paises(){
 		return Arrays.asList("Mexico", "Peru", "Chile","Venezuela", "Uruguay");	
@@ -49,13 +60,19 @@ public class FormControlller {
 	
 	@ModelAttribute("listaPaises")
 	public List<Pais> listaPaises(){
-		return Arrays.asList(
-				new Pais(1, "MX", "Mexico"), 
-				new Pais(2, "PE", "Peru"), 
-				new Pais(3,"CL","Chile"),
-				new Pais(4, "VE", "Venezuela"), 
-				new Pais(5, "UY", "Uruguay"));	
+		return paisService.listar();
 	}
+	
+	@ModelAttribute("listaRolesString")
+	public List<String> listaRolesString(){
+		List<String> roles = new ArrayList<>();
+		roles.add("ROLE_ADMIN");
+		roles.add("ROLE_USUARIO");
+		roles.add("ROLE_MODERATOR");
+		
+		return roles;
+	}
+	
 	
 	@ModelAttribute("paisesMap")
 	public Map<String, String> paisesMap(){
