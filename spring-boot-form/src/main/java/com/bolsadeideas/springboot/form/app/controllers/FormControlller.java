@@ -24,10 +24,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.boldadeideas.springboot.form.app.editors.NombreMayusculaEditor;
+import com.boldadeideas.springboot.form.app.editors.RolesEditor;
+import com.bolsadeideas.springboot.form.app.domains.Role;
 import com.bolsadeideas.springboot.form.app.models.Pais;
 import com.bolsadeideas.springboot.form.app.models.Usuario;
 import com.bolsadeideas.springboot.form.app.services.PaisPropertyEditor;
 import com.bolsadeideas.springboot.form.app.services.PaisService;
+import com.bolsadeideas.springboot.form.app.services.RoleService;
 import com.bolsadeideas.springboot.form.app.validation.UsuarioValidador;
 
 @Controller
@@ -43,6 +46,12 @@ public class FormControlller {
 	@Autowired
 	private PaisPropertyEditor paisEditor;
 	
+	@Autowired
+	private RoleService roleService;
+	
+	@Autowired
+	private RolesEditor roleEditor;
+	
 	@org.springframework.web.bind.annotation.InitBinder
 	public void InitBinder(WebDataBinder binder) {
 		binder.addValidators(validador);
@@ -51,6 +60,17 @@ public class FormControlller {
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
 		binder.registerCustomEditor(String.class, new NombreMayusculaEditor());
 		binder.registerCustomEditor(Pais.class, "pais",paisEditor);
+		binder.registerCustomEditor(Role.class, "roles",roleEditor);
+	}
+	
+	@ModelAttribute("genero")
+	public List<String> genero(){
+		return Arrays.asList("Hombre","Mujer");
+	}
+	
+	@ModelAttribute("listaRoles")
+	public List<Role> listaRoles(){
+		return this.roleService.listar();
 	}
 	
 	@ModelAttribute("paises")
@@ -73,6 +93,15 @@ public class FormControlller {
 		return roles;
 	}
 	
+	@ModelAttribute("listaRolesMap")
+	public Map<String, String> listaRolesMap(){
+		Map<String, String> roles = new HashMap<String, String>();
+		roles.put("ROLE_ADMIN","Administrador");
+		roles.put("ROLE_USUARIO", "Usuario");
+		roles.put("ROLE_MODERATOR", "Moderador");
+		return roles;
+	}
+	
 	
 	@ModelAttribute("paisesMap")
 	public Map<String, String> paisesMap(){
@@ -90,6 +119,7 @@ public class FormControlller {
 		Usuario usuario = new Usuario();
 		usuario.setNombre("Homero");
 		usuario.setApellido("Simpson");
+		usuario.setHabilitar(true);
 		usuario.setIdentificador("123.456.789:k");
 		model.addAttribute("titulo", "Formulario usuarios");
 		model.addAttribute("usuario", usuario);

@@ -14,6 +14,7 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.bolsadeideas.springboot.form.app.domains.Role;
 import com.bolsadeideas.springboot.form.app.validation.IdentificadorRegex;
 import com.bolsadeideas.springboot.form.app.validation.Requerido;
 
@@ -49,13 +50,36 @@ public class Usuario {
 	private Pais pais;
 	
 	@NotEmpty
-	private List<String> roles;
+	private List<Role> roles;
 	
-	public List<String> getRoles() {
+	private Boolean habilitar;
+	
+	@NotEmpty
+	private String genero;
+	
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public Boolean getHabilitar() {
+		return habilitar;
+	}
+
+	public void setHabilitar(Boolean habilitar) {
+		this.habilitar = habilitar;
+	}
+
+
+	public List<Role> getRoles() {
 		return roles;
 	}
 
-	public void setRoles(List<String> roles) {
+	
+	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
 

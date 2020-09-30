@@ -22,17 +22,14 @@
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.SessionAttributes"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Pattern"/>
     <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.models.Usuario"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.springframework.validation.ValidationUtils"/>
     <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.validation.UsuarioValidador"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotBlank"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.WebDataBinder"/>
     <fullyQualifiedTypeName name="javax.validation.ConstraintValidator"/>
     <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.validation.IdentificadorRegex"/>
     <fullyQualifiedTypeName name="javax.validation.Constraint"/>
     <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.validation.Requerido"/>
-    <fullyQualifiedTypeName name="java.beans.PropertyEditorSupport"/>
     <fullyQualifiedTypeName name="com.boldadeideas.springboot.form.app.editors.NombreMayusculaEditor"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="java.util.Map"/>
@@ -41,5 +38,12 @@
     <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
     <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.models.Pais"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.domains.Role"/>
+    <fullyQualifiedTypeName name="java.beans.PropertyEditorSupport"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
+    <fullyQualifiedTypeName name="com.boldadeideas.springboot.form.app.editors.RolesEditor"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.bolsadeideas.springboot.form.app.services.RoleService"/>
 </qualifiedTypeNameHistroy>
